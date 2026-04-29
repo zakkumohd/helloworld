@@ -1,0 +1,15 @@
+name: DEV Deployment
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "development" ]
+
+jobs:
+  trigger:
+    uses: Gewan-India/gconnect_configurations/.github/workflows/dev_qa-java17-ms.yml@main
+    with:
+      ECR_REGISTRY: ${{vars.ECR_REGISTRY}}
+      ECR_REPOSITORY: ${{vars.ECR_REPOSITORY}}
+      CONTAINER_NAME: ${{vars.CONTAINER_NAME}}
+    
+    secrets: inherit
