@@ -1,15 +1,17 @@
 name: DEV Deployment
+
 on:
   workflow_dispatch:
   push:
-    branches: [ "development" ]
+    branches: [ "develop" ]
 
 jobs:
   trigger:
     uses: zakkumohd/configurations/.github/workflows/html.yml@develop
+
     with:
-      ECR_REGISTRY: ${{vars.ECR_REGISTRY}}
-      ECR_REPOSITORY: ${{vars.ECR_REPOSITORY}}
-      CONTAINER_NAME: ${{vars.CONTAINER_NAME}}
-    
+      ECR_REGISTRY: ${{ vars.ECR_REGISTRY }}
+      ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
+      CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
+
     secrets: inherit
