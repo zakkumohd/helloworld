@@ -6,7 +6,7 @@ on:
 
 jobs:
   trigger:
-    uses: Gewan-India/gconnect_configurations/.github/workflows/dev_qa-java17-ms.yml@main
+    uses: zakkumohd/configurations/.github/workflows/html.yml@develop
     with:
       ECR_REGISTRY: ${{vars.ECR_REGISTRY}}
       ECR_REPOSITORY: ${{vars.ECR_REPOSITORY}}
